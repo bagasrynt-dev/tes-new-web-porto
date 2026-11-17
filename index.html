@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M. Bagas Riyanto | HR & Operations Portofolio</title>
+    
+    <!-- SEO & Open Graph Meta Tags -->
+    <meta name="description" content="Portofolio profesional Muhamad Bagas Riyanto - Certified HR Staff (BNSP Level 3) & Lulusan Bimbingan dan Konseling UNTIRTA. Spesialisasi di bidang HR Operations, Payroll, BPJS, Rekrutmen, dan Analisis Data Excel.">
+    <meta name="author" content="Muhamad Bagas Riyanto">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="M. Bagas Riyanto | HR & Operations Portofolio">
+    <meta property="og:description" content="Certified HR Staff (BNSP Level 3) dengan kompetensi teknis di bidang Administrasi SDM, Pengupahan (Payroll), BPJS, SOP, dan Microsoft Excel.">
+    <meta property="og:image" content="FP - Bagas (new).png">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        // Konfigurasi tema warna Corporate Navy & Accent Gold
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        navy: {
+                            50: '#f0f4f8',
+                            100: '#d9e2ec',
+                            500: '#334e68',
+                            600: '#243b53',
+                            700: '#1a334a',
+                            800: '#102a43',
+                            900: '#0b1c2c',
+                            950: '#06101a',
+                        },
+                        accent: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    }
+                }
+            }
+        }
+
+        // Fungsi pemulihan otomatis jika gambar gagal dimuat di mobile/desktop
+        function handleImgError(img) {
+            const rawAttr = img.getAttribute('src') || '';
+            const step = parseInt(img.dataset.errStep || '0', 10);
+
+            // Langkah 1: Coba format URL-encoded (%20) atau sebaliknya
+            if (step === 0) {
+                img.dataset.errStep = '1';
+                img.dataset.origSrc = rawAttr;
+                if (rawAttr.includes(' ')) {
+                    img.src = rawAttr.replace(/ /g, '%20');
+                    return;
+                } else if (rawAttr.includes('%20')) {
+                    img.src = decodeURIComponent(rawAttr);
+                    return;
+                }
+            }
+
+            const baseSrc = img.dataset.origSrc || rawAttr;
+
+            // Langkah 2: Coba variasi ekstensi (.jpg / .png / .JPG / .PNG)
+            if (step <= 1) {
+                img.dataset.errStep = '2';
+                if (/\.png$/i.test(baseSrc)) {
+                    img.src = baseSrc.replace(/\.png$/i, '.jpg');
+                    return;
+                } else if (/\.jpe?g$/i.test(baseSrc)) {
+                    img.src = baseSrc.replace(/\.jpe?g$/i, '.png');
+                    return;
+                }
+            }
+
+            if (step === 2) {
+                img.dataset.errStep = '3';
+                if (/\.jpg$/i.test(baseSrc)) {
+                    img.src = baseSrc.replace(/\.jpg$/i, '.JPG');
+                    return;
+                } else if (/\.png$/i.test(baseSrc)) {
+                    img.src = baseSrc.replace(/\.png$/i, '.PNG');
+                    return;
+                }
+            }
+
+            // Langkah 3: Gunakan gambar cadangan (data-fallback) jika tersedia
+            if (step <= 3 && img.dataset.fallback && !img.dataset.usedFallback) {
+                img.dataset.errStep = '4';
+                img.dataset.usedFallback = '1';
+                img.src = img.dataset.fallback;
+                return;
+            }
+
+            // Langkah Terakhir: Tampilkan placeholder bersih
+            img.onerror = null;
+            img.src = 'https://placehold.co/600x400/f1f5f9/102a43?text=Pratinjau+Dokumen';
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom scrollbar untuk tampilan korporat yang bersih */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+        /* Mencegah drag gambar secara tidak sengaja */
+        img {
+            -webkit-user-drag: none;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="antialiased bg-slate-50 text-slate-800 selection:bg-navy-800 selection:text-white">
+
+    <!-- Navigasi Utama -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 bg-white/90 backdrop-blur-md border-b border-slate-200" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#home" class="text-2xl font-bold tracking-tight text-navy-800">
+                        Bagas
+                    </a>
+                </div>
+                <!-- Menu Desktop -->
+                <div class="hidden lg:flex space-x-8">
+                    <a href="#home" class="text-slate-600 hover:text-navy-800 transition-colors text-sm font-semibold">Beranda</a>
+                    <a href="#about" class="text-slate-600 hover:text-navy-800 transition-colors text-sm font-semibold">Profil</a>
+                    <a href="#skills" class="text-slate-600 hover:text-navy-800 transition-colors text-sm font-semibold">Kompetensi</a>
+                    <a href="#history" class="text-slate-600 hover:text-navy-800 transition-colors text-sm font-semibold">Riwayat</a>
+                    <a href="#certifications" class="text-slate-600 hover:text-navy-800 transition-colors text-sm font-semibold">Sertifikasi</a>
+                    <a href="#portfolio" class="text-slate-600 hover:text-navy-800 transition-colors text-sm font-semibold">Portofolio</a>
+                    <a href="#contact" class="text-slate-600 hover:text-navy-800 transition-colors text-sm font-semibold">Kontak</a>
+                </div>
+                <!-- Tombol Menu Mobile -->
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-button" aria-label="Buka Menu Navigasi" class="text-navy-800 hover:text-accent-500 focus:outline-none transition-colors p-2">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Panel Menu Mobile -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100 shadow-lg absolute w-full">
+            <div class="px-4 pt-2 pb-4 space-y-2">
+                <a href="#home" class="block px-3 py-2 text-base font-medium text-slate-700 hover:text-navy-800 hover:bg-slate-50 rounded-md">Beranda</a>
+                <a href="#about" class="block px-3 py-2 text-base font-medium text-slate-700 hover:text-navy-800 hover:bg-slate-50 rounded-md">Profil</a>
+                <a href="#skills" class="block px-3 py-2 text-base font-medium text-slate-700 hover:text-navy-800 hover:bg-slate-50 rounded-md">Kompetensi</a>
+                <a href="#history" class="block px-3 py-2 text-base font-medium text-slate-700 hover:text-navy-800 hover:bg-slate-50 rounded-md">Riwayat</a>
+                <a href="#certifications" class="block px-3 py-2 text-base font-medium text-slate-700 hover:text-navy-800 hover:bg-slate-50 rounded-md">Sertifikasi</a>
+                <a href="#portfolio" class="block px-3 py-2 text-base font-medium text-slate-700 hover:text-navy-800 hover:bg-slate-50 rounded-md">Portofolio</a>
+                <a href="#contact" class="block px-3 py-2 text-base font-medium text-slate-700 hover:text-navy-800 hover:bg-slate-50 rounded-md">Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Bagian Beranda / Hero -->
+    <section id="home" class="min-h-screen flex items-center justify-center pt-24 pb-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-gradient-to-b from-white to-slate-50">
+        <!-- Pola latar belakang korporat -->
+        <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: radial-gradient(#102a43 1px, transparent 1px); background-size: 32px 32px;"></div>
+
+        <div class="max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center relative z-10 gap-12 md:gap-8">
+            <div class="md:w-3/5 text-center md:text-left space-y-6">
+                <div class="inline-block px-4 py-1.5 rounded-full bg-navy-50 border border-navy-100 text-navy-600 font-semibold text-sm mb-2">
+                    <i class="fas fa-map-marker-alt mr-2 text-accent-500"></i>Kabupaten Tangerang, Banten
+                </div>
+                <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-extrabold leading-tight text-navy-800 sm:whitespace-nowrap tracking-tight">
+                    Muhamad Bagas Riyanto
+                </h1>
+                <h2 class="text-sm sm:text-base md:text-sm lg:text-base xl:text-lg font-semibold text-slate-500 leading-relaxed">
+                    <span class="block mb-1 text-navy-700">Certified HR Staff (BNSP)</span>
+                    <span class="block font-medium">Human Resources & Operations | Guidance and Counseling Graduate</span>
+                </h2>
+                <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 pt-6">
+                    <!-- Tombol Unduh CV Modern -->
+                    <a href="All file new web/New CV - M. Bagas Riyanto.pdf" target="_blank" rel="noopener noreferrer" class="group w-full sm:w-auto px-8 py-3.5 rounded-xl bg-gradient-to-r from-accent-500 to-orange-500 text-white font-bold tracking-wide shadow-lg shadow-orange-500/40 hover:shadow-xl hover:shadow-orange-500/50 hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out"></div>
+                        <i class="fas fa-file-download text-xl relative z-10 transition-transform duration-300 group-hover:-translate-y-1"></i> 
+                        <span class="relative z-10">Unduh CV</span>
+                    </a>
+                    <!-- Tombol Sekunder -->
+                    <a href="#portfolio" class="w-full sm:w-auto px-8 py-3.5 rounded-xl border-2 border-navy-800 text-navy-800 hover:bg-navy-800 hover:text-white font-bold transition-all duration-300 flex items-center justify-center gap-2">
+                        Lihat Portofolio
+                    </a>
+                </div>
+            </div>
+            
+            <div class="md:w-2/5 flex justify-center">
+                <div class="relative w-64 h-64 md:w-80 md:h-80 xl:w-96 xl:h-96">
+                    <!-- Elemen dekoratif bingkai foto -->
+                    <div class="absolute inset-0 rounded-2xl bg-navy-800 rotate-6 transition-transform hover:rotate-12 duration-500"></div>
+                    <div class="absolute inset-0 rounded-2xl bg-slate-200 -rotate-3"></div>
+                    <img src="FP - Bagas (new).png" decoding="async" onerror="handleImgError(this)" alt="M. Bagas Riyanto" class="absolute inset-0 w-full h-full rounded-2xl object-cover border-4 border-white shadow-xl z-10 transition-transform duration-500 hover:scale-[1.02]">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bagian Tentang Saya -->
+    <section id="about" class="py-24 bg-white border-y border-slate-100">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-navy-800 mb-4">Tentang Saya</h2>
+                <div class="w-20 h-1 bg-accent-500 mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="space-y-8 text-slate-600 leading-relaxed text-lg md:text-xl text-justify md:text-center">
+                <p>
+                    Lulusan Bimbingan dan Konseling dari Universitas Sultan Ageng Tirtayasa (UNTIRTA) dengan IPK 3.57 yang memiliki sertifikasi kompetensi Staff SDM Level 3 (BNSP). Memiliki pemahaman mendalam mengenai teknik komunikasi, manajemen konflik, dan dinamika hubungan kerja, serta dibekali keahlian teknis operasional HR yang mencakup rekrutmen & seleksi, penyusunan uraian jabatan, administrasi pengupahan (payroll), jaminan sosial (BPJS), hingga kepatuhan kebijakan MSDM.
+                </p>
+                <div class="p-6 bg-slate-50 border border-slate-200 rounded-2xl shadow-inner text-left">
+                    <p class="font-medium">
+                        <i class="fas fa-quote-left text-accent-500 text-2xl mb-2 block"></i>
+                        Memiliki kombinasi kuat antara latar belakang psikologi interpersonal dan kompetensi operasional HR yang terstandarisasi secara nasional. Siap berkontribusi secara profesional, akuntabel, dan sistematis dalam pengelolaan SDM organisasi.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bagian Kompetensi Utama -->
+    <section id="skills" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-navy-800 mb-4">Kompetensi Utama</h2>
+                <div class="w-20 h-1 bg-accent-500 mx-auto rounded-full"></div>
+                <p class="text-slate-600 mt-6 max-w-2xl mx-auto text-lg">Keterampilan inti yang menunjang efektivitas operasional HR dan administrasi bisnis.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Kompetensi 1 -->
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                    <div class="w-16 h-16 rounded-xl bg-navy-50 flex items-center justify-center mb-6 group-hover:bg-navy-800 transition-colors">
+                        <i class="fas fa-user-tie text-3xl text-navy-800 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-navy-800 mb-4">Administrasi & Operasional HR</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        Penyusunan Uraian Jabatan, Administrasi Pengupahan (Payroll), Administrasi Jaminan Sosial (BPJS), Administrasi Kebijakan MSDM, serta End-to-End Proses Rekrutmen & Seleksi.
+                    </p>
+                </div>
+
+                <!-- Kompetensi 2 -->
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                    <div class="w-16 h-16 rounded-xl bg-navy-50 flex items-center justify-center mb-6 group-hover:bg-green-600 transition-colors">
+                        <i class="fas fa-file-excel text-3xl text-navy-800 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-navy-800 mb-4">Aplikasi Perkantoran & Data</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        Microsoft Office Suite (Word, PowerPoint), Tingkat Lanjut Microsoft Excel (Formula Pencarian LOOKUP/XLOOKUP, Logika IF, Pengolahan & Pembersihan Data, serta Analisis Data Menggunakan Pivot Table).
+                    </p>
+                </div>
+
+                <!-- Kompetensi 3 -->
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                    <div class="w-16 h-16 rounded-xl bg-navy-50 flex items-center justify-center mb-6 group-hover:bg-accent-500 transition-colors">
+                        <i class="fas fa-users-cog text-3xl text-navy-800 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-navy-800 mb-4">Komunikasi & Lapangan</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        Hubungan Karyawan, Manajemen Konflik, Komunikasi Interpersonal, Manajemen Logistik, dan Koordinasi Operasional Lapangan.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bagian Riwayat Akademik & Profesional -->
+    <section id="history" class="py-24 bg-white border-y border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-navy-800 mb-4">Riwayat Akademik & Profesional</h2>
+                <div class="w-20 h-1 bg-accent-500 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
+                <!-- Sisi Pendidikan -->
+                <div>
+                    <div class="flex items-center gap-3 mb-8">
+                        <div class="w-12 h-12 rounded-full bg-navy-100 flex items-center justify-center text-navy-800">
+                            <i class="fas fa-graduation-cap text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-navy-800">Riwayat Pendidikan</h3>
+                    </div>
+
+                    <div class="relative pl-8 border-l-2 border-slate-200 space-y-10">
+                        <div class="relative">
+                            <div class="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-white border-4 border-accent-500"></div>
+                            <h4 class="text-xl font-bold text-slate-900">Universitas Sultan Ageng Tirtayasa (UNTIRTA)</h4>
+                            <p class="text-accent-600 font-semibold mb-2">Agustus 2021 - November 2025</p>
+                            <p class="text-slate-700 font-medium mb-1">Fakultas / Jurusan: S1 - Bimbingan dan Konseling (S.Pd.)</p>
+                            <p class="text-slate-700 font-medium mb-4">IPK (GPA): 3.57/4.00</p>
+                            <div class="bg-slate-50 p-4 rounded-lg border border-slate-200 text-sm text-slate-600 space-y-3">
+                                <p><strong>Judul Skripsi:</strong> Kecemasan Berbicara Ditinjau dari Lingkungan Belajar (Studi Fenomenologis pada Siswa Kelas X MAN 4 Tangerang).</p>
+                                <p><strong>Kegiatan Praktik Akademik:</strong> Program Pengenalan Lapangan Persekolahan (PLP): Menerapkan teknik komunikasi interpersonal, bimbingan kelompok terstruktur, serta manajemen konflik untuk mendukung pengembangan perilaku positif siswa.</p>
+                            </div>
+                            <!-- Dokumentasi PLP (Proporsional utuh tanpa terpotong di kiri/kanan maupun atas/bawah) -->
+                            <div class="mt-4 rounded-xl overflow-hidden border border-slate-200 shadow-sm bg-slate-100">
+                                <img src="All file new web/Dokumentasi PLP.jpg" loading="lazy" decoding="async" onerror="handleImgError(this)" alt="Dokumentasi PLP" class="w-full h-auto object-contain block hover:scale-[1.02] transition-transform duration-500">
+                                <div class="bg-white p-2 text-center text-xs font-semibold text-slate-500 border-t border-slate-100">Dokumentasi PLP</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sisi Pengalaman Kerja -->
+                <div>
+                    <div class="flex items-center gap-3 mb-8">
+                        <div class="w-12 h-12 rounded-full bg-navy-100 flex items-center justify-center text-navy-800">
+                            <i class="fas fa-briefcase text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-navy-800">Pengalaman Kerja</h3>
+                    </div>
+
+                    <div class="relative pl-8 border-l-2 border-slate-200 space-y-10">
+                        <!-- Pengalaman 1 -->
+                        <div class="relative">
+                            <div class="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-white border-4 border-navy-500"></div>
+                            <h4 class="text-xl font-bold text-slate-900">Koordinator Lapangan / Tour Leader (Freelance)</h4>
+                            <p class="text-navy-600 font-semibold mb-2">PT SRIKANDI GENDHIS GRUP | Februari 2023 - Juni 2026</p>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                                Mengoordinasikan komunikasi intensif antar stakeholder, mengelola manajemen logistik, serta memobilisasi kelompok besar siswa guna memastikan kelancaran operasional dan ketepatan waktu kegiatan.
+                            </p>
+                            <!-- Dokumentasi TL (Rasio 4:3 konsisten di semua ukuran layar agar kepala tidak terpotong) -->
+                            <div class="grid grid-cols-2 gap-3 mt-4">
+                                <div class="rounded-lg overflow-hidden border border-slate-200 shadow-sm bg-slate-100">
+                                    <img src="All file new web/TL (1).jpg" loading="lazy" decoding="async" onerror="handleImgError(this)" alt="Dokumentasi TL 1" class="aspect-[4/3] w-full object-cover object-center block hover:scale-105 transition-transform duration-500">
+                                </div>
+                                <div class="rounded-lg overflow-hidden border border-slate-200 shadow-sm bg-slate-100">
+                                    <img src="All file new web/TL (2).jpg" loading="lazy" decoding="async" onerror="handleImgError(this)" alt="Dokumentasi TL 2" class="aspect-[4/3] w-full object-cover object-center block hover:scale-105 transition-transform duration-500">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pengalaman 2 -->
+                        <div class="relative">
+                            <div class="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-white border-4 border-navy-500"></div>
+                            <h4 class="text-xl font-bold text-slate-900">Tenaga Penginval (Guru Pengganti)</h4>
+                            <p class="text-navy-600 font-semibold mb-2">SMPN 1 Kronjo | Januari 2023 - Februari 2023</p>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Mengelola kegiatan instruksional secara mandiri di 8 kelas berbeda melalui penyampaian materi komunikatif, melakukan observasi dinamika kelompok siswa, serta menyelesaikan administrasi dan penilaian belajar secara sistematis.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bagian Sertifikasi & Pelatihan -->
+    <section id="certifications" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-navy-800 mb-4">Sertifikasi & Pelatihan</h2>
+                <div class="w-20 h-1 bg-accent-500 mx-auto rounded-full"></div>
+                <p class="text-slate-600 mt-6 max-w-2xl mx-auto text-lg">Validasi kompetensi profesional di bidang HR, Administrasi, dan Analisis Data.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+                <!-- Sertifikat 1 -->
+                <div class="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-lg transition-all group flex flex-col h-full">
+                    <div class="h-48 overflow-hidden relative bg-slate-100 border-b border-slate-100 flex items-center justify-center p-2">
+                        <img src="All file new web/SS - Sertifikat Kompetensi HR Staff (BNSP).png" data-fallback="All file new web/SS - LPK (HR Academy).jpg" loading="lazy" decoding="async" onerror="handleImgError(this)" alt="Sertifikasi BNSP" class="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="hidden lg:flex absolute inset-0 bg-navy-900/80 opacity-0 group-hover:opacity-100 focus-within:opacity-100 transition-opacity flex-col justify-center items-center gap-2 backdrop-blur-sm p-4">
+                            <a href="All file new web/Sertifikat Kompetensi HR Staff (BNSP) - Muhamad Bagas Riyanto.pdf" target="_blank" rel="noopener noreferrer" class="w-full py-2 px-2 bg-white text-navy-800 text-xs font-bold rounded hover:bg-slate-100 text-center leading-snug"><i class="fas fa-file-pdf mr-1 text-red-500"></i> Sertifikat Kompetensi HR Staff (BNSP)</a>
+                            <a href="All file new web/Muhamad Bagas Riyanto - LPK (HR Academy).pdf" target="_blank" rel="noopener noreferrer" class="w-full py-2 px-2 bg-navy-700 text-white text-xs font-bold rounded hover:bg-navy-600 text-center"><i class="fas fa-certificate mr-1 text-accent-400"></i> Sertifikat LPK</a>
+                        </div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <h3 class="font-bold text-navy-800 text-sm mb-2 leading-tight">Sertifikasi Kompetensi Kerja HR Staff / Staff SDM Level 3</h3>
+                        <p class="text-xs text-slate-500 mb-3 font-medium">BNSP x HR Academy - Sep 2026</p>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4 flex-grow">Tersertifikasi resmi SKKNI No. 297/2020: Uraian Jabatan, Jamsostek, Payroll, Kebijakan MSDM, dll.</p>
+                        <div class="mt-auto pt-3 border-t border-slate-100 flex flex-col gap-2 lg:hidden">
+                            <a href="All file new web/Sertifikat Kompetensi HR Staff (BNSP) - Muhamad Bagas Riyanto.pdf" target="_blank" rel="noopener noreferrer" class="w-full py-2 px-2 bg-slate-100 text-navy-800 text-xs font-bold rounded hover:bg-slate-200 text-center"><i class="fas fa-file-pdf mr-1 text-red-500"></i> Sertifikat Kompetensi HR Staff (BNSP)</a>
+                            <a href="All file new web/Muhamad Bagas Riyanto - LPK (HR Academy).pdf" target="_blank" rel="noopener noreferrer" class="w-full py-2 px-2 bg-navy-800 text-white text-xs font-bold rounded hover:bg-navy-700 text-center"><i class="fas fa-certificate mr-1 text-accent-400"></i> Sertifikat LPK</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sertifikat 2 -->
+                <div class="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-lg transition-all group flex flex-col h-full">
+                    <div class="h-48 overflow-hidden relative bg-slate-100 border-b border-slate-100 p-2">
+                        <img src="All file new web/SS - Certificate S.U Introduction to Human Resource Management.jpg" loading="lazy" decoding="async" onerror="handleImgError(this)" alt="Intro HR" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="hidden lg:flex absolute inset-0 bg-navy-900/80 opacity-0 group-hover:opacity-100 focus-within:opacity-100 transition-opacity justify-center items-center backdrop-blur-sm p-4">
+                            <a href="All file new web/Muhamad Bagas Riyanto - Certificate S.U Introduction to Human Resource Management.pdf" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-white text-navy-800 text-sm font-bold rounded hover:bg-slate-100"><i class="fas fa-certificate mr-1 text-accent-500"></i> Lihat Sertifikat</a>
+                        </div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <h3 class="font-bold text-navy-800 text-sm mb-2 leading-tight">Introduction to Human Resource Management</h3>
+                        <p class="text-xs text-slate-500 mb-3 font-medium">Saylor University [IACET] - Jul 2026</p>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4 flex-grow">Pemahaman komprehensif konsep dasar MSDM, fungsi strategis HR, manajemen talenta, & regulasi.</p>
+                        <div class="mt-auto pt-3 border-t border-slate-100 lg:hidden">
+                            <a href="All file new web/Muhamad Bagas Riyanto - Certificate S.U Introduction to Human Resource Management.pdf" target="_blank" rel="noopener noreferrer" class="block w-full py-2 bg-navy-800 text-white text-xs font-bold rounded hover:bg-navy-700 text-center"><i class="fas fa-certificate mr-1 text-accent-400"></i> Lihat Sertifikat</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sertifikat 3 -->
+                <div class="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-lg transition-all group flex flex-col h-full">
+                    <div class="h-48 overflow-hidden relative bg-slate-100 border-b border-slate-100 p-2">
+                        <img src="All file new web/SS - Certificate S.U Elementary English as a Second Language.jpg" loading="lazy" decoding="async" onerror="handleImgError(this)" alt="English ESL" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="hidden lg:flex absolute inset-0 bg-navy-900/80 opacity-0 group-hover:opacity-100 focus-within:opacity-100 transition-opacity justify-center items-center backdrop-blur-sm p-4">
+                            <a href="All file new web/Muhamad Bagas Riyanto - Certificate S.U Elementary English as a Second Language.pdf" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-white text-navy-800 text-sm font-bold rounded hover:bg-slate-100"><i class="fas fa-certificate mr-1 text-accent-500"></i> Lihat Sertifikat</a>
+                        </div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <h3 class="font-bold text-navy-800 text-sm mb-2 leading-tight">Elementary English as a Second Language</h3>
+                        <p class="text-xs text-slate-500 mb-3 font-medium">Saylor University [IACET] - Jun 2026</p>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4 flex-grow">Menguasai kemampuan dasar Bahasa Inggris: grammar, reading, writing, dan komunikasi.</p>
+                        <div class="mt-auto pt-3 border-t border-slate-100 lg:hidden">
+                            <a href="All file new web/Muhamad Bagas Riyanto - Certificate S.U Elementary English as a Second Language.pdf" target="_blank" rel="noopener noreferrer" class="block w-full py-2 bg-navy-800 text-white text-xs font-bold rounded hover:bg-navy-700 text-center"><i class="fas fa-certificate mr-1 text-accent-400"></i> Lihat Sertifikat</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sertifikat 4 -->
+                <div class="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-lg transition-all group flex flex-col h-full">
+                    <div class="h-48 overflow-hidden relative bg-slate-100 border-b border-slate-100 p-2">
+                        <img src="All file new web/SS - E-Certificate SC Pivot Table in Microsoft Excel.jpg" loading="lazy" decoding="async" onerror="handleImgError(this)" alt="Pivot Table" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="hidden lg:flex absolute inset-0 bg-navy-900/80 opacity-0 group-hover:opacity-100 focus-within:opacity-100 transition-opacity justify-center items-center backdrop-blur-sm p-4">
+                            <a href="All file new web/Muhamad Bagas Riyanto E-Certificate SC Pivot Table in Microsoft Excel.pdf" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-white text-navy-800 text-sm font-bold rounded hover:bg-slate-100"><i class="fas fa-certificate mr-1 text-accent-500"></i> Lihat Sertifikat</a>
+                        </div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <h3 class="font-bold text-navy-800 text-sm mb-2 leading-tight">Pivot Table in Microsoft Excel</h3>
+                        <p class="text-xs text-slate-500 mb-3 font-medium">MySkill x Lion Parcel - Jun 2026</p>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4 flex-grow">Optimasi pengolahan data dan penyusunan laporan operasional logistik menggunakan Pivot Table.</p>
+                        <div class="mt-auto pt-3 border-t border-slate-100 lg:hidden">
+                            <a href="All file new web/Muhamad Bagas Riyanto E-Certificate SC Pivot Table in Microsoft Excel.pdf" target="_blank" rel="noopener noreferrer" class="block w-full py-2 bg-navy-800 text-white text-xs font-bold rounded hover:bg-navy-700 text-center"><i class="fas fa-certificate mr-1 text-accent-400"></i> Lihat Sertifikat</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sertifikat 5 -->
+                <div class="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-lg transition-all group flex flex-col h-full">
+                    <div class="h-48 overflow-hidden relative bg-slate-100 border-b border-slate-100 p-2">
+                        <img src="All file new web/SS - Staff HRD untuk Persiapan Sertifikasi BNSP.jpg" loading="lazy" decoding="async" onerror="handleImgError(this)" alt="HRD BNSP Prep" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="hidden lg:flex absolute inset-0 bg-navy-900/80 opacity-0 group-hover:opacity-100 focus-within:opacity-100 transition-opacity justify-center items-center backdrop-blur-sm p-4">
+                            <a href="All file new web/Muhamad Bagas Riyanto - Staff HRD untuk Persiapan Sertifikasi BNSP.pdf" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-white text-navy-800 text-sm font-bold rounded hover:bg-slate-100"><i class="fas fa-certificate mr-1 text-accent-500"></i> Lihat Sertifikat</a>
+                        </div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <h3 class="font-bold text-navy-800 text-sm mb-2 leading-tight">Staff HRD untuk Persiapan Sertifikasi BNSP</h3>
+                        <p class="text-xs text-slate-500 mb-3 font-medium">Yureka Education Center - Mei 2026</p>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4 flex-grow">Penyusunan uraian jabatan, administrasi jaminan sosial, payroll, dan kebijakan MSDM.</p>
+                        <div class="mt-auto pt-3 border-t border-slate-100 lg:hidden">
+                            <a href="All file new web/Muhamad Bagas Riyanto - Staff HRD untuk Persiapan Sertifikasi BNSP.pdf" target="_blank" rel="noopener noreferrer" class="block w-full py-2 bg-navy-800 text-white text-xs font-bold rounded hover:bg-navy-700 text-center"><i class="fas fa-certificate mr-1 text-accent-400"></i> Lihat Sertifikat</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sertifikat 6 -->
+                <div class="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-lg transition-all group flex flex-col h-full">
+                    <div class="h-48 overflow-hidden relative bg-slate-100 border-b border-slate-100 p-2">
+                        <img src="All file new web/SS - Dasar Microsoft Excel Administrasi Perkantoran.jpg" loading="lazy" decoding="async" onerror="handleImgError(this)" alt="Excel Admin" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="hidden lg:flex absolute inset-0 bg-navy-900/80 opacity-0 group-hover:opacity-100 focus-within:opacity-100 transition-opacity justify-center items-center backdrop-blur-sm p-4">
+                            <a href="All file new web/Muhamad Bagas Riyanto - Dasar Microsoft Excel Administrasi Perkantoran.pdf" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-white text-navy-800 text-sm font-bold rounded hover:bg-slate-100"><i class="fas fa-certificate mr-1 text-accent-500"></i> Lihat Sertifikat</a>
+                        </div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <h3 class="font-bold text-navy-800 text-sm mb-2 leading-tight">Dasar Microsoft Excel Administrasi Perkantoran</h3>
+                        <p class="text-xs text-slate-500 mb-3 font-medium">Yureka Education Center - Mei 2026</p>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4 flex-grow">Penguasaan formula logika (IF), pencarian data (LOOKUP), dan Pivot Table untuk administrasi.</p>
+                        <div class="mt-auto pt-3 border-t border-slate-100 lg:hidden">
+                            <a href="All file new web/Muhamad Bagas Riyanto - Dasar Microsoft Excel Administrasi Perkantoran.pdf" target="_blank" rel="noopener noreferrer" class="block w-full py-2 bg-navy-800 text-white text-xs font-bold rounded hover:bg-navy-700 text-center"><i class="fas fa-certificate mr-1 text-accent-400"></i> Lihat Sertifikat</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sertifikat 7 -->
+                <div class="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-lg transition-all group flex flex-col h-full">
+                    <div class="h-48 overflow-hidden relative bg-slate-100 border-b border-slate-100 p-2">
+                        <img src="All file new web/SS - E-Certif SC HR Recruitment Process.jpg" loading="lazy" decoding="async" onerror="handleImgError(this)" alt="HR Recruitment" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="hidden lg:flex absolute inset-0 bg-navy-900/80 opacity-0 group-hover:opacity-100 focus-within:opacity-100 transition-opacity justify-center items-center backdrop-blur-sm p-4">
+                            <a href="All file new web/Muhamad Bagas Riyanto E-Certif SC HR Recruitment Process.pdf" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-white text-navy-800 text-sm font-bold rounded hover:bg-slate-100"><i class="fas fa-certificate mr-1 text-accent-500"></i> Lihat Sertifikat</a>
+                        </div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <h3 class="font-bold text-navy-800 text-sm mb-2 leading-tight">HR Recruitment Process</h3>
+                        <p class="text-xs text-slate-500 mb-3 font-medium">MySkill - Mei 2026</p>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4 flex-grow">Memahami secara mendalam end-to-end proses rekrutmen karyawan dan seleksi kandidat secara profesional.</p>
+                        <div class="mt-auto pt-3 border-t border-slate-100 lg:hidden">
+                            <a href="All file new web/Muhamad Bagas Riyanto E-Certif SC HR Recruitment Process.pdf" target="_blank" rel="noopener noreferrer" class="block w-full py-2 bg-navy-800 text-white text-xs font-bold rounded hover:bg-navy-700 text-center"><i class="fas fa-certificate mr-1 text-accent-400"></i> Lihat Sertifikat</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sertifikat 8 -->
+                <div class="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-lg transition-all group flex flex-col h-full">
+                    <div class="h-48 overflow-hidden relative bg-slate-100 border-b border-slate-100 p-2">
+                        <img src="All file new web/SS - E-Certificate SC Microsoft Excel Basic Formula.jpg" data-fallback="All file new web/SS - Ms. Excel Basic.png" loading="lazy" decoding="async" onerror="handleImgError(this)" alt="Excel Basic Formula" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="hidden lg:flex absolute inset-0 bg-navy-900/80 opacity-0 group-hover:opacity-100 focus-within:opacity-100 transition-opacity justify-center items-center backdrop-blur-sm p-4">
+                            <a href="All file new web/Muhamad Bagas Riyanto E-Certificate SC Microsoft Excel Basic Formula.pdf" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-white text-navy-800 text-sm font-bold rounded hover:bg-slate-100"><i class="fas fa-certificate mr-1 text-accent-500"></i> Lihat Sertifikat</a>
+                        </div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <h3 class="font-bold text-navy-800 text-sm mb-2 leading-tight">Microsoft Excel Basic Formula</h3>
+                        <p class="text-xs text-slate-500 mb-3 font-medium">MySkill - Mei 2026</p>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4 flex-grow">Menguasai formula dasar logika dan kalkulasi perhitungan data menggunakan Microsoft Excel.</p>
+                        <div class="mt-auto pt-3 border-t border-slate-100 lg:hidden">
+                            <a href="All file new web/Muhamad Bagas Riyanto E-Certificate SC Microsoft Excel Basic Formula.pdf" target="_blank" rel="noopener noreferrer" class="block w-full py-2 bg-navy-800 text-white text-xs font-bold rounded hover:bg-navy-700 text-center"><i class="fas fa-certificate mr-1 text-accent-400"></i> Lihat Sertifikat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bagian Portofolio Kerja Mandiri -->
+    <section id="portfolio" class="py-24 bg-white border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-navy-800 mb-4">Hasil Portofolio Kerja Mandiri</h2>
+                <div class="w-20 h-1 bg-accent-500 mx-auto rounded-full"></div>
+                <p class="text-slate-600 mt-6 max-w-2xl mx-auto text-lg">Kumpulan dokumen simulasi HR dan analisis data sebagai bukti penerapan kompetensi teknis.</p>
+            </div>
+
+            <div class="space-y-12">
+                <!-- Portofolio 1 -->
+                <div class="flex flex-col lg:flex-row bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="lg:w-1/3 bg-white p-4 flex items-center justify-center border-b lg:border-b-0 lg:border-r border-slate-200 relative group cursor-pointer">
+                        <img src="All file new web/SS - Job Description.png" loading="lazy" decoding="async" onerror="handleImgError(this)" alt="Job Description" class="max-h-64 object-contain transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="hidden lg:flex absolute inset-0 bg-navy-900/60 opacity-0 group-hover:opacity-100 focus-within:opacity-100 transition-opacity items-center justify-center">
+                             <a href="All file new web/Uraian Jabatan (simulasi).pdf" target="_blank" rel="noopener noreferrer" class="px-6 py-2 bg-white text-navy-800 font-bold rounded-lg shadow-lg"><i class="fas fa-eye mr-2"></i>Lihat PDF</a>
+                        </div>
+                    </div>
+                    <div class="lg:w-2/3 p-8 flex flex-col justify-center">
+                        <div class="inline-block px-3 py-1 bg-navy-100 text-navy-800 text-xs font-bold rounded-full w-max mb-3">01. Job Description</div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-3">Menyusun Uraian Jabatan (Job Description) & KPI</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Penyusunan dokumen uraian jabatan komprehensif untuk posisi IT Web Developer Staff yang mencakup identitas jabatan, tugas utama, Key Performance Indicators (KPI) terukur, spesifikasi kualifikasi, matriks hubungan kerja internal-eksternal, serta batasan wewenang pengambilan keputusan operasional.
+                        </p>
+                        <div class="mt-5 lg:hidden">
+                            <a href="All file new web/Uraian Jabatan (simulasi).pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-5 py-2.5 bg-navy-800 text-white text-sm font-bold rounded-lg shadow-sm hover:bg-navy-700"><i class="fas fa-eye mr-2"></i>Lihat PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portofolio 2 -->
+                <div class="flex flex-col lg:flex-row-reverse bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="lg:w-1/3 bg-white p-4 flex items-center justify-center border-b lg:border-b-0 lg:border-l border-slate-200 relative group cursor-pointer">
+                        <img src="All file new web/SS - SOP Payroll.png" loading="lazy" decoding="async" onerror="handleImgError(this)" alt="SOP Payroll" class="max-h-64 object-contain transform group-hover:scale-105 transition-transform duration-500">
+                         <div class="hidden lg:flex absolute inset-0 bg-navy-900/60 opacity-0 group-hover:opacity-100 focus-within:opacity-100 transition-opacity items-center justify-center">
+                             <a href="All file new web/SOP Payroll (simulasi).pdf" target="_blank" rel="noopener noreferrer" class="px-6 py-2 bg-white text-navy-800 font-bold rounded-lg shadow-lg"><i class="fas fa-eye mr-2"></i>Lihat PDF</a>
+                        </div>
+                    </div>
+                    <div class="lg:w-2/3 p-8 flex flex-col justify-center">
+                        <div class="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-xs font-bold rounded-full w-max mb-3">02. SOP Creation</div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-3">Standar Operasional Prosedur (SOP) Penggajian Karyawan</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Perancangan SOP Penggajian Karyawan terstandarisasi (Dokumen No. 01/SOP/HR.PYRL/0107/R.0) berbasis kepatuhan UU Ketenagakerjaan dan PP No. 36/2021. Mengatur alur kerja sistematis mulai dari verifikasi data karyawan, kalkulasi absensi dan lembur, perhitungan pajak & BPJS, alur otorisasi berjenjang, hingga distribusi slip gaji dan diagram alir (flowchart).
+                        </p>
+                        <div class="mt-5 lg:hidden">
+                            <a href="All file new web/SOP Payroll (simulasi).pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-5 py-2.5 bg-navy-800 text-white text-sm font-bold rounded-lg shadow-sm hover:bg-navy-700"><i class="fas fa-eye mr-2"></i>Lihat PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portofolio 3 -->
+                <div class="flex flex-col lg:flex-row bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="lg:w-1/3 bg-white p-4 flex items-center justify-center border-b lg:border-b-0 lg:border-r border-slate-200 relative group cursor-pointer">
+                        <img src="All file new web/SS - Administrasi Pengupahan.png" loading="lazy" decoding="async" onerror="handleImgError(this)" alt="Administrasi Payroll" class="max-h-64 object-contain transform group-hover:scale-105 transition-transform duration-500">
+                         <div class="hidden lg:flex absolute inset-0 bg-navy-900/60 opacity-0 group-hover:opacity-100 focus-within:opacity-100 transition-opacity items-center justify-center">
+                             <a href="All file new web/Administrasi Pengupahan (simulasi).pdf" target="_blank" rel="noopener noreferrer" class="px-6 py-2 bg-white text-navy-800 font-bold rounded-lg shadow-lg"><i class="fas fa-eye mr-2"></i>Lihat PDF</a>
+                        </div>
+                    </div>
+                    <div class="lg:w-2/3 p-8 flex flex-col justify-center">
+                        <div class="inline-block px-3 py-1 bg-green-100 text-green-800 text-xs font-bold rounded-full w-max mb-3">03. Payroll Administration</div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-3">Rekapitulasi Administrasi Pengupahan (Payroll) & Jaminan Sosial</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Penyusunan laporan penggajian karyawan terintegrasi untuk efisiensi biaya tenaga kerja. Mengkalkulasi gaji pokok, tunjangan jabatan, perhitungan tarif upah lembur per jam, pemotongan iuran jaminan sosial (BPJS Kesehatan & Ketenagakerjaan), pemotongan PPh 21, hingga pelaporan final take-home pay dan administrasi transfer bank.
+                        </p>
+                        <div class="mt-5 lg:hidden">
+                            <a href="All file new web/Administrasi Pengupahan (simulasi).pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-5 py-2.5 bg-navy-800 text-white text-sm font-bold rounded-lg shadow-sm hover:bg-navy-700"><i class="fas fa-eye mr-2"></i>Lihat PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portofolio 4 -->
+                <div class="flex flex-col lg:flex-row-reverse bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="lg:w-1/3 bg-white p-4 flex items-center justify-center border-b lg:border-b-0 lg:border-l border-slate-200 relative group cursor-pointer">
+                        <img src="All file new web/SS - Ms. Excel Basic.png" data-fallback="All file new web/SS - Dasar Microsoft Excel Administrasi Perkantoran.jpg" loading="lazy" decoding="async" onerror="handleImgError(this)" alt="Excel Analysis" class="max-h-64 object-contain transform group-hover:scale-105 transition-transform duration-500">
+                         <div class="hidden lg:flex absolute inset-0 bg-navy-900/60 opacity-0 group-hover:opacity-100 focus-within:opacity-100 transition-opacity flex-col gap-2 items-center justify-center">
+                             <a href="All file new web/Short Class - Excel Basic Formula (Practice Sheet).xlsx" target="_blank" rel="noopener noreferrer" class="px-6 py-2 bg-[#107c41] text-white font-bold rounded-lg shadow-lg flex items-center"><i class="fas fa-file-excel mr-2"></i>Unduh Excel</a>
+                        </div>
+                    </div>
+                    <div class="lg:w-2/3 p-8 flex flex-col justify-center">
+                        <div class="inline-block px-3 py-1 bg-purple-100 text-purple-800 text-xs font-bold rounded-full w-max mb-3">04. Data Processing</div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-3">Analisis Data Transaksi Operasional & Logika Perhitungan Excel</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Pengolahan data administrasi perkantoran pada laporan transaksi kuartal (Q3) dan data penyewa menggunakan kombinasi fungsi kalkulasi serta formula logika dasar Microsoft Excel secara sistematis, guna menghasilkan rekapitulasi data operasional yang rapi, valid, dan mudah dipahami.
+                        </p>
+                        <div class="mt-5 lg:hidden">
+                            <a href="All file new web/Short Class - Excel Basic Formula (Practice Sheet).xlsx" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-5 py-2.5 bg-[#107c41] text-white text-sm font-bold rounded-lg shadow-sm hover:opacity-95"><i class="fas fa-file-excel mr-2"></i>Unduh Excel</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portofolio 5 -->
+                <div class="flex flex-col lg:flex-row bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="lg:w-1/3 bg-white p-4 flex items-center justify-center border-b lg:border-b-0 lg:border-r border-slate-200 relative group cursor-pointer">
+                        <img src="All file new web/SS - Pivot Table t2.png" loading="lazy" decoding="async" onerror="handleImgError(this)" alt="Pivot Table Dashboard" class="max-h-64 object-contain transform group-hover:scale-105 transition-transform duration-500">
+                         <div class="hidden lg:flex absolute inset-0 bg-navy-900/60 opacity-0 group-hover:opacity-100 focus-within:opacity-100 transition-opacity items-center justify-center">
+                             <a href="All file new web/Short Class MySkill x Lion Parcel - Shipment Data Pivot Table.xlsx" target="_blank" rel="noopener noreferrer" class="px-6 py-2 bg-[#107c41] text-white font-bold rounded-lg shadow-lg flex items-center"><i class="fas fa-file-excel mr-2"></i>Unduh Excel</a>
+                        </div>
+                    </div>
+                    <div class="lg:w-2/3 p-8 flex flex-col justify-center">
+                        <div class="inline-block px-3 py-1 bg-amber-100 text-amber-800 text-xs font-bold rounded-full w-max mb-3">05. Data Visualization</div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-3">Analisis & Dasbor Laporan Distribusi Massa (Lion Parcel Shipment)</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Konsolidasi, penyusunan ringkasan, dan analisis data pengiriman berskala besar (shipment data) menggunakan fitur Pivot Table untuk menghasilkan visualisasi laporan operasional logistik yang efisien, sehingga memudahkan peninjauan tren pengiriman antardaerah secara berkala.
+                        </p>
+                        <div class="mt-5 lg:hidden">
+                            <a href="All file new web/Short Class MySkill x Lion Parcel - Shipment Data Pivot Table.xlsx" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-5 py-2.5 bg-[#107c41] text-white text-sm font-bold rounded-lg shadow-sm hover:opacity-95"><i class="fas fa-file-excel mr-2"></i>Unduh Excel</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bagian Kontak & Tautan Profesional -->
+    <section id="contact" class="py-24 bg-navy-900 text-white border-t border-navy-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Kontak & Tautan Profesional</h2>
+                <div class="w-20 h-1 bg-accent-500 mx-auto rounded-full"></div>
+                <p class="text-slate-300 mt-6 text-lg max-w-2xl mx-auto">Mari terhubung untuk mendiskusikan peluang kerja, kolaborasi, atau kebutuhan HR di perusahaan Anda.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Kartu Informasi Kontak -->
+                <div class="space-y-6">
+                    <a href="mailto:mbagasriyanto3@gmail.com" class="flex items-center gap-6 p-6 rounded-2xl bg-navy-800 border border-navy-700 hover:border-accent-500 hover:bg-navy-800/80 transition-all group">
+                        <div class="w-14 h-14 rounded-full bg-navy-700 flex items-center justify-center group-hover:bg-accent-500 transition-colors">
+                            <i class="fas fa-envelope text-2xl text-slate-300 group-hover:text-white"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm text-slate-400 font-semibold uppercase tracking-wider mb-1">Email Profesional</p>
+                            <p class="text-lg font-bold">mbagasriyanto3@gmail.com</p>
+                        </div>
+                    </a>
+
+                    <a href="https://linkedin.com/in/mbagasrynt" target="_blank" rel="noopener noreferrer" class="flex items-center gap-6 p-6 rounded-2xl bg-navy-800 border border-navy-700 hover:border-[#0A66C2] hover:bg-navy-800/80 transition-all group">
+                        <div class="w-14 h-14 rounded-full bg-navy-700 flex items-center justify-center group-hover:bg-[#0A66C2] transition-colors">
+                            <i class="fab fa-linkedin-in text-2xl text-slate-300 group-hover:text-white"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm text-slate-400 font-semibold uppercase tracking-wider mb-1">Profil LinkedIn</p>
+                            <p class="text-lg font-bold">linkedin.com/in/mbagasrynt</p>
+                        </div>
+                    </a>
+
+                    <a href="https://wa.me/6281385828989" target="_blank" rel="noopener noreferrer" class="flex items-center gap-6 p-6 rounded-2xl bg-navy-800 border border-navy-700 hover:border-[#25D366] hover:bg-navy-800/80 transition-all group">
+                        <div class="w-14 h-14 rounded-full bg-navy-700 flex items-center justify-center group-hover:bg-[#25D366] transition-colors">
+                            <i class="fab fa-whatsapp text-2xl text-slate-300 group-hover:text-white"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm text-slate-400 font-semibold uppercase tracking-wider mb-1">WhatsApp / Kontak</p>
+                            <p class="text-lg font-bold">+62 813-8582-8989</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Kotak Unduh CV -->
+                <div class="bg-navy-800 p-8 rounded-2xl border border-navy-700 flex flex-col items-center justify-center text-center">
+                    <div class="w-24 h-24 bg-navy-900 rounded-full flex items-center justify-center mb-6 border-4 border-navy-700 shadow-inner">
+                        <i class="fas fa-file-pdf text-4xl text-accent-500"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Curriculum Vitae</h3>
+                    <p class="text-slate-400 mb-8 leading-relaxed">Unduh resume lengkap saya untuk melihat secara ringkas rekam jejak, pendidikan, dan sertifikasi yang saya miliki.</p>
+                    
+                    <a href="All file new web/New CV - M. Bagas Riyanto.pdf" target="_blank" rel="noopener noreferrer" class="group w-full py-4 rounded-xl bg-gradient-to-r from-accent-500 to-orange-500 text-white font-bold tracking-wide shadow-lg shadow-orange-500/30 hover:shadow-xl hover:shadow-orange-500/50 hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out"></div>
+                        <i class="fas fa-download text-xl relative z-10 transition-transform duration-300 group-hover:-translate-y-1"></i> 
+                        <span class="relative z-10">Unduh Berkas CV</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy-950 border-t border-navy-900 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="text-xl font-bold tracking-tight text-slate-300">
+                Portofolio Bagas
+            </div>
+            <div class="text-slate-500 text-sm font-medium">
+                &copy; <span id="year"></span> Muhamad Bagas Riyanto. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script Interaksi -->
+    <script>
+        // Mengatur tahun secara otomatis pada footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Logika buka/tutup menu mobile
+        const btn = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Menutup menu mobile saat salah satu tautan diklik
+        const mobileLinks = menu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Efek bayangan pada navbar saat halaman digulir
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 10) {
+                nav.classList.add('shadow-md', 'bg-white/95');
+                nav.classList.remove('bg-white/90', 'border-transparent');
+            } else {
+                nav.classList.remove('shadow-md', 'bg-white/95');
+                nav.classList.add('bg-white/90', 'border-transparent');
+            }
+        });
+    </script>
+</body>
+</html>
